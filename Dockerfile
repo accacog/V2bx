@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 ENV CGO_ENABLED=0
 RUN go mod download
-RUN go build -o V2bX -ldflags '-s -w' -gcflags="all=-trimpath=${PWD}" -asmflags="all=-trimpath=${PWD} -tags "xray hy"
+RUN go build -o V2bX -ldflags '-s -w' -gcflags="all=-trimpath=${PWD}" -asmflags="all=-trimpath=${PWD} -tags "xray"
 
 # Release
 FROM  alpine
